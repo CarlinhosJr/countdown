@@ -17,8 +17,8 @@ export function CreateModal(){
                     </div>
 
                     <footer className="mt-6 flex justify-end gap-4">
-                        <Dialog.Close className="bg-slate-500 rounded-md px-5 h-12 font-semibold hover:bg-slate-600">Cancelar</Dialog.Close>
-                        <button type="submit" className="bg-emerald-500 rounded-md px-5 h-12 font-semibold flex items-center gap-3 hover:bg-emerald-600">Enviar</button>
+                        <Dialog.Close className="bg-red-500 rounded-md px-5 h-12 font-semibold hover:bg-red-600">Close</Dialog.Close>
+                        <button type="submit" className="bg-emerald-500 rounded-md px-5 h-12 font-semibold flex items-center gap-3 hover:bg-emerald-600">Send</button>
                     </footer>
                 </form>
             </Dialog.Content>
