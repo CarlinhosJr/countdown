@@ -3,7 +3,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import './styles/main.css';
 import { SignUp } from './componentes/SingUp';
 import { CreateModal } from './componentes/CreateModal';
-import { CountDown } from './componentes/CountDown';
+import CountDown from './componentes/CountDown';
 
 
 
