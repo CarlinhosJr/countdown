@@ -35,7 +35,7 @@ const CountDown = () => {
         return () => clearInterval(intervalId);
     }, [seconds, minutes, hours, days])
 
-    function isTimeBefore(){
+    const isTimeBefore = () => {
         setDays(day => day = 0)
         setHours(hour => hour = 0)
         setMinutes(minute => minute = 0)
