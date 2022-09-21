@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-
+import dayjs from 'dayjs';
 
 const CountDown = () => {
-    
-    const data = new Date('2022-09-22 00:00:00');
-    const falta = (data.getTime() - new Date().getTime()) / 1000;
+
+    const nowDate = new Date()
+    const date = new Date('2022-09-22 00:00:00');
+    const falta = (date.getTime() - new Date().getTime()) / 1000;
 
     const [seconds, setSeconds] = useState(Math.round(falta % 60));
     const [minutes, setMinutes] = useState(Math.round(falta / 60 % 60));
@@ -26,9 +27,21 @@ const CountDown = () => {
                 setDays(days - 1)
             }
             setSeconds(sec => sec -1)
+            if(date.getTime() < nowDate.getTime()){
+                isTimeBefore()
+            }
+
         }, 1000);
         return () => clearInterval(intervalId);
     }, [seconds, minutes, hours, days])
+
+    function isTimeBefore(){
+        setDays(day => day = 0)
+        setHours(hour => hour = 0)
+        setMinutes(minute => minute = 0)
+        setSeconds(second => second = 0)
+    }
+
 
     return (
         <div className="flex mt-5 gap-10 text-7xl px-5">
