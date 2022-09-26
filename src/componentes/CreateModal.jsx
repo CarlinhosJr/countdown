@@ -1,5 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 
+// COMPONENTE DE CRIAÇÃO DO MODAL
 export function CreateModal(){
     return(
         <Dialog.Portal>

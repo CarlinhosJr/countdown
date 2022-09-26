@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import dayjs from 'dayjs';
 
-const CountDown = () => {
+// COMPONENTE QUE FARÁ A CONTAGEM DO TIMER
+
+const CountDown = () => { 
 
     const nowDate = new Date()
-    const date = new Date('2022-09-23 09:09:00');
+    const date = new Date('2022-09-25 09:09:00');
     const falta = (date.getTime() - new Date().getTime()) / 1000;
 
     const [seconds, setSeconds] = useState(Math.round(falta % 60));
@@ -13,7 +14,7 @@ const CountDown = () => {
     const [days, setDays] = useState(Math.round(falta / 60 / 60 / 24));
 
     useEffect(() =>{
-        const intervalId = setInterval(() => {
+        const intervalId = setInterval(() => { // function para contar
             if(seconds == 0){
                 setSeconds (60)
                 setMinutes(minutes -1)
@@ -35,7 +36,7 @@ const CountDown = () => {
         return () => clearInterval(intervalId);
     }, [seconds, minutes, hours, days])
 
-    const isTimeBefore = () => {
+    const isTimeBefore = () => { // Se o tempo for antes da data atual recebe 0
         setDays(0)
         setHours(0)
         setMinutes(0)
