@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const CountDown = () => { 
 
     const nowDate = new Date()
-    const date = new Date('2022-09-25 09:09:00');
+    const date = new Date('2022-09-26 20:45:00');
     const falta = (date.getTime() - new Date().getTime()) / 1000;
 
     const [seconds, setSeconds] = useState(Math.round(falta % 60));
@@ -20,12 +20,16 @@ const CountDown = () => {
                 setMinutes(minutes -1)
             }
             if(minutes == 0){
-                setMinutes(min => min = 60)
+                setMinutes(60)
                 setHours(hours - 1)
             }
             if(hours == 0){
-                setHours(hr => hr = 24)
+                setHours(24)
                 setDays(days - 1)
+            }
+            if(days == 0 && hours == 0){
+                setDays(0)
+                setHours(0)
             }
             setSeconds(sec => sec -1)
             if(date.getTime() < nowDate.getTime()){
